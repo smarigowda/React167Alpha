@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-  render() {
+function App() {
+    const [ counter, useCounter ] = useState(0);
     return (
       <div className="App">
         <header className="App-header">
@@ -17,12 +17,21 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            Learn React - { counter }
           </a>
+          <br/>
+          <button 
+            style={{ 
+              backgroundColor: 'red',
+              width: '150px',
+              height: '50px',
+              fontSize: '18px'
+            }}
+            onClick={() => { useCounter(counter+1)} }>Increment</button>
         </header>
+        
       </div>
     );
-  }
 }
 
 export default App;
